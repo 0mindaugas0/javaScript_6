@@ -7,23 +7,26 @@ a = + prompt("Įveskite pirmąjį skaičių");
 let b;
 b = + prompt("Įveskite antrąjį skaičių");
 
-let atsakymas = skaiciavimas(a, veiksmas, b);
-console.log(atsakymas);
+let atsakymas = skaiciavimas(veiksmas, a, b);
+alert (atsakymas);
 
 
-function skaiciavimas (skaicius1, veiksmas, skaicius2){
-    let veiksmoAtlikimas;
-    switch (skaiciavimas){
+function skaiciavimas (veiksmas, skaicius1, skaicius2){
+    switch (veiksmas){
         case "sudetis":
-            return veiksmoAtlikimas = skaicius1 
+            return skaicius1 + skaicius2;
             break;
         case "atimtis":
-            veiksmoAtlikimas = skaicius1 - skaicius2;
+            return skaicius1 - skaicius2;
             break;
-
+        case "daugyba":
+            return skaicius1 * skaicius2;
+            break;
+        case "dalyba":
+            return skaicius1 / skaicius2;
+            break;
         default:
-            veiksmoAtlikimas = "Tokio veiksmo nėra";
+            alert ("Tokio veiksmo nėra");
     }
-    return veiksmoAtlikimas;
-
+    return skaiciavimas;
 }
